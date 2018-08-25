@@ -40,8 +40,7 @@ This is a Bot API/Wrapper for [ZekrosTJA goChat](https://www.github.com/zekroTJA
 | send | message **String** | Sends a message in the Chat |
 | get_prefix | -/- | Give you the current Prefix |
 | set_prefix | prefix **String** | Set the Prefix to the given Parameter |
-| get_name | -/- | Give you the current Nickname |
-| set_name | name **String** | Sets the Nickname to the given Name |
+| get_nickname | -/- | Give you the current Nickname |
 
 ---
 
