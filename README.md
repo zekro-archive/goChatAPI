@@ -18,10 +18,7 @@ This is a Bot API/Wrapper for [ZekrosTJA goChat](github.com/zekroTJA/goChat)
 
 # Installaton
 
-`$ npm i --save goChatAPI`
-
----
-
+`$ npm i --save gochatapi`
 ## Events
 
 **Eventname** | **What it parse** | **Description**
