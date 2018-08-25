@@ -6,7 +6,7 @@
 
 ---
 
-This is a Bot API/Wrapper for [ZekrosTJA goChat](github.com/zekroTJA/goChat)
+This is a Bot API/Wrapper for [ZekrosTJA goChat](https://www.github.com/zekroTJA/goChat)
 
 ---
 
