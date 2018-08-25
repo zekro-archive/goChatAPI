@@ -22,7 +22,6 @@ class Bot {
                 event: 'username',
                 data: this.nickname
             });
-            console.log('Try to connect');
         });
         
         //gets called then the websocket disconnect
