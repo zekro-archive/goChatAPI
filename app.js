@@ -18,17 +18,21 @@ class Bot {
 
         //gets called when the websocket connect to the Server
         this.ws.on('open', function () {
-            this.emit({
-                event: 'username',
-                data: this.nickname
-            });
+            try {
+                this.emit({
+                    event: 'username',
+                    data: this.nickname
+                });
+            } catch (error) {
+                console.log(error);
+            }
         });
-        
+
         //gets called then the websocket disconnect
-        this.ws.on('disconnect', function() {
+        this.ws.on('disconnect', function () {
             this.Emil.emit('Bot_disconnected');
         });
-         
+
         //gehts called then the websocket has an error
         this.ws.on('error', err => {
             this.Emil.emit('Bot_error', err);
@@ -49,15 +53,15 @@ class Bot {
                 case 'message':
                     this.Emil.emit('message', data2.data);
                     break;
-                //When a new User join    
+                    //When a new User join    
                 case 'connected':
                     this.Emil.emit('Client_connected', data2.data.name[0]);
                     break;
-                //When a User disconnect
+                    //When a User disconnect
                 case 'disconnected':
-                    this.Emil.emit('Client_disconnected', data2.data.name);
+                    this.Emil.emit('Client_disconnected', data2.data.name[0]);
                     break;
-                //When the Bot connects correctly
+                    //When the Bot connects correctly
                 case 'connect_rejected':
                     this.Emil.emit('Bot_loggedin');
                     break;
@@ -81,25 +85,15 @@ class Bot {
         })
     }
     //Gets the Nickname of the Bot
-    get_Nickname(){
+    get_Nickname() {
         return this.nickname;
     }
-    //Sets a Nickname and connect new
-    set_Nickname(Name){
-        this.nickname = Name;
-        this.ws.close(0, 'New Connecting');
-        this.ws = new Websocket(this.url);
-        this.emit({
-            event: 'username',
-            data: Name
-        });
-    }
     //Gets the Prefix of the Bot
-    get_Prefix(){
+    get_Prefix() {
         return this.prefix;
     }
     //Sets the Prefix of the Bot
-    set_Prefix(Prefix){
+    set_Prefix(Prefix) {
         this.prefix = Prefix;
     }
 }

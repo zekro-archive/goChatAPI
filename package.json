@@ -1,6 +1,6 @@
 {
   "name": "gochatapi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a Node.js Wrapper for zekros goChat github.com/zekroTJA/goChat",
   "main": "app.js",
   "scripts": {
